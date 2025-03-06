@@ -1,3 +1,4 @@
+import { fetchProducts, displayCard, AllProducts } from "./fetch-products.js";
 // display all products
 fetchProducts().then(() => {
   const products = document.getElementById("products");

@@ -1,3 +1,4 @@
+import { showToast } from "./main.js";
 // form inputs
 const name = document.getElementById("name");
 const email = document.getElementById("email");
@@ -14,7 +15,7 @@ const passError = document.getElementById("errPass");
 const newPassError = document.getElementById("errNewPass");
 const ConfirmNewPassError = document.getElementById("errConfirmNewPass");
 
-// 
+//
 
 // fill inputs with current user data
 window.addEventListener("load", () => {
@@ -35,7 +36,9 @@ form.addEventListener("submit", (e) => {
       name: name.value,
       email: email.value,
       password:
-        password.value.trim() !== "" ? newPassword.value : currentUser?.password,
+        password.value.trim() !== ""
+          ? newPassword.value
+          : currentUser?.password,
       address: address.value,
     };
     const index = users.findIndex((u) => u.email === currentUser?.email);
@@ -50,9 +53,7 @@ form.addEventListener("submit", (e) => {
 function fillFormWithUserData(user) {
   name.value = user.name;
   email.value = user.email;
-  user.address && (
-    address.value = user.address
-  );
+  user.address && (address.value = user.address);
 }
 function resetPasswordFields() {
   password.value = "";

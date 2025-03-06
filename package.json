@@ -1,16 +1,19 @@
 {
-  "name": "e-commerce-website",
+  "name": "exclusive-ecommerce",
   "version": "1.0.0",
   "main": "index.js",
+  "homepage": "https://Kimo-Mo.github.io/Exclusive-eCommerce",
   "scripts": {
     "build": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/style.css",
-    "watch": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/style.css --watch"
+    "watch": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/style.css --watch",
+    "deploy": "npm run build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@tailwindcss/cli": "^4.0.0"
+    "@tailwindcss/cli": "^4.0.0",
+    "tailwindcss": "^4.0.10"
   }
 }

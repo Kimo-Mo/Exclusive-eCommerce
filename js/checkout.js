@@ -1,3 +1,4 @@
+import { showToast, updateHeaderAndNav } from "./main.js";
 // get cart items form local storage
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 // place to add cart item slides

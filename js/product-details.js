@@ -1,3 +1,4 @@
+import { showToast, updateHeaderAndNav } from "./main.js";
 const mainProduct = {
   id: 17,
   image: "../imgs/PS5-Controller.png",

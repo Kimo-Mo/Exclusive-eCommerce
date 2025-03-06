@@ -1,7 +1,9 @@
+import config from "./config.js";
+import { showToast, updateHeaderAndNav, updateHeartIcons } from "./main.js";
 let AllProducts = [];
 async function fetchProducts() {
   try {
-    const response = await fetch("/js/products.json");
+    const response = await fetch(`${config.basePath}/js/products.json`);
     const data = await response.json();
     AllProducts = data;
   } catch (error) {
@@ -22,10 +24,10 @@ function displayCard(product) {
     <div class="card h-full rounded-sm shadow-md relative" data-product-id="${id}">
       <div class="relative overflow-hidden rounded-sm">
         <img
-          src="${image}"
+          src="${config.basePath}/${image}"
           class="card-img-top"
           alt="${title}" />
-        <button class="add_btn absolute bottom-[-42px] left-0 w-full h-[40px] bg-black text-white border-none outline-none transition-[300ms] cursor-pointer" onclick="AddToCart(${id})">Add To Cart</button>
+        <button class="add_btn absolute bottom-[-42px] left-0 w-full h-[40px] bg-black text-white border-none outline-none transition-[300ms] cursor-pointer" onclick="window.AddToCart(${id})">Add To Cart</button>
       </div>
       <div class="info p-4 text-left">
         <p class="card_title mb-2">${title}</p>
@@ -38,19 +40,19 @@ function displayCard(product) {
           }
         </div>
         <div class="rate flex items-center gap-2">
-            <img src="../imgs/icons/${
-              rating == 1
-                ? "One"
-                : rating == 2
-                ? "Two"
-                : rating == 3
-                ? "Three"
-                : rating == 4
-                ? "Four"
-                : rating == 4.5
-                ? "Four Half"
-                : "Five"
-            } Star.jpg" alt="Three stars" />
+            <img src="${config.basePath}/imgs/icons/${
+    rating == 1
+      ? "One"
+      : rating == 2
+      ? "Two"
+      : rating == 3
+      ? "Three"
+      : rating == 4
+      ? "Four"
+      : rating == 4.5
+      ? "Four Half"
+      : "Five"
+  } Star.jpg" alt="Three stars" />
           (${reviews})
         </div>
       </div>
@@ -62,19 +64,21 @@ function displayCard(product) {
       <button
         class="heart absolute top-[12px] cursor-pointer ${
           product.isWishList ? "bg-(--primary-color)" : "bg-white"
-        } hover:bg-(--primary-color) transition-[150ms]" onclick="AddToWishList(${id},this)">
+        } hover:bg-(--primary-color) transition-[150ms]" onclick="window.AddToWishList(${id},this)">
           <img
-            src="../imgs/icons/heart small.png"
+            src="${config.basePath}/imgs/icons/heart small.png"
             alt="add to wish list" />
       </button>
-      <button class="eye absolute top-[54px] cursor-pointer bg-white hover:bg-(--primary-color) transition-[150ms]" onclick="quickView(${id})">
-          <img src="../imgs/icons/Quick View.png" alt="Quick View" />
+      <button class="eye absolute top-[54px] cursor-pointer bg-white hover:bg-(--primary-color) transition-[150ms]" onclick="window.quickView(${id})">
+          <img src="${
+            config.basePath
+          }/imgs/icons/Quick View.png" alt="Quick View" />
       </button>
     </div>
   `;
 }
 // =============== ADD TO CART FUNCTION ===============
-function AddToCart(id) {
+window.AddToCart = function AddToCart(id) {
   // find the target product
   const product = AllProducts.find((p) => p.id == id);
   // get the exist cart array of initiate empty one
@@ -95,7 +99,7 @@ function AddToCart(id) {
 }
 
 // =============== ADD TO WISHLIST FUNCTION ===============
-function AddToWishList(id, btn) {
+window.AddToWishList = function AddToWishList(id, btn) {
   // Find the target product
   const product = AllProducts.find((product) => product.id == id);
   // Get the existing wish list array or initiate an empty one
@@ -126,7 +130,7 @@ function AddToWishList(id, btn) {
   updateHeaderAndNav();
 }
 // =============== QUICK VIEW FUNCTION ===============
-function quickView(id) {
+window.quickView =function quickView(id) {
   let wishList = JSON.parse(localStorage.getItem("wishList")) || [];
   const product = AllProducts.find((product) => product.id == id);
   product.isWishList = wishList.some((p) => p.id == id);
@@ -137,19 +141,19 @@ function quickView(id) {
   modalContent.innerHTML = `
     <button
       class="absolute top-2 right-2 rotate-[45deg] bg-(--primary-color) text-white border-none outline-none p-1 sm:p-2 rounded-[50%] cursor-pointer z-10"
-      onclick="closeModal()">
-      <img src="../imgs/icons/icon-plus.png" alt="close" />
+      onclick="window.closeModal()">
+      <img src="${config.basePath}/imgs/icons/icon-plus.png" alt="close" />
     </button>
     <div class="flex flex-col md:flex-row gap-y-6 gap-x-10 justify-center">
       <div class="flex-1 flex justify-center">
-        <img src="${product.image}" alt="${product.title}" />
+        <img src="${config.basePath}${product.image}" alt="${product.title}" />
       </div>
       <div class="flex-1 flex flex-col gap-4 md:gap-7">
         <h1 class="text-2xl">${product.title}</h1>
         <div class="flex items-center gap-4">
-          <img src="../imgs/icons/${getRatingImage(
-            product.rating
-          )} star.jpg" alt="${product.title}" />
+          <img src="${config.basePath}/imgs/icons/${getRatingImage(
+    product.rating
+  )} star.jpg" alt="${product.title}" />
           <span>(${product.reviews})</span>
         </div>
         <div class="flex gap-4 items-center">
@@ -163,16 +167,18 @@ function quickView(id) {
         <p>${product.description}</p>
         <div class="flex gap-4">
           <button
-            onclick="AddToCart(${product.id})"
+            onclick="window.AddToCart(${product.id})"
             class="py-4 px-12 inline-block h-[50px] rounded-sm transition-[150ms] bg-(--primary-color) text-white hover:bg-(--hover-btn-color) cursor-pointer flex-1">
             Add to cart
           </button>
           <button
-            onclick="AddToWishList(${product.id},this)"
+            onclick="window.AddToWishList(${product.id},this)"
             class="heart py-4 px-6 lg:px-12 inline-block h-[50px] rounded-sm transition-[150ms] border border-gray-300 ${
               product.isWishList ? "bg-(--primary-color)" : "bg-white"
             } hover:bg-(--hover-btn-color) cursor-pointer">
-            <img src="../imgs/icons/heart small.png" alt="add to wishlist" />
+            <img src="${
+              config.basePath
+            }/imgs/icons/heart small.png" alt="add to wishlist" />
           </button>
         </div>
       </div>
@@ -204,10 +210,12 @@ function getRatingImage(rating) {
   }
 }
 // =============== CLOSE MODAL FUNCTION ===============
-function closeModal() {
+window.closeModal = function closeModal() {
   // get the modal element
   const modal = document.getElementById("quickViewModal");
   // hide the modal
   modal.classList.remove("active");
   modal.style.zIndex = "-1";
 }
+
+export { fetchProducts, displayCard, AllProducts };
