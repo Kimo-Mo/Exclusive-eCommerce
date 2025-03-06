@@ -30,13 +30,15 @@ function displayHeader() {
   header.innerHTML = `
     <nav class="container mx-auto px-6 lg:px-12 flex items-center justify-between">
       <a href=${
-        url.includes("index.html") ? "#" : "../index.html"
+        url.includes("index.html") || url === `${config.basePath}`
+          ? "#"
+          : `${config.basePath}/index.html`
       } class="text-2xl font-bold tracking-[0.75px]">Exclusive</a>
       <ul class="nav py-10 sm:py-0 px-6 sm:px-0 flex gap-12 bg-white">
         <li>${
-          url.includes("index.html")
+          url.includes("index.html") || url === `${config.basePath}/`
             ? `<a href="#" class="active">Home</a>`
-            : `<a href="../index.html">Home</a>`
+            : `<a href="${config.basePath}/index.html">Home</a>`
         }</li>
         <li>
           ${createNavLink("contact.html", "Contact")}

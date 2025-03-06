@@ -96,7 +96,7 @@ window.AddToCart = function AddToCart(id) {
   showToast("product added to cart.");
   // refresh the header component
   updateHeaderAndNav();
-}
+};
 
 // =============== ADD TO WISHLIST FUNCTION ===============
 window.AddToWishList = function AddToWishList(id, btn) {
@@ -128,9 +128,9 @@ window.AddToWishList = function AddToWishList(id, btn) {
   localStorage.setItem("wishList", JSON.stringify(wishList));
   // Refresh the header component
   updateHeaderAndNav();
-}
+};
 // =============== QUICK VIEW FUNCTION ===============
-window.quickView =function quickView(id) {
+window.quickView = function quickView(id) {
   let wishList = JSON.parse(localStorage.getItem("wishList")) || [];
   const product = AllProducts.find((product) => product.id == id);
   product.isWishList = wishList.some((p) => p.id == id);
@@ -189,7 +189,7 @@ window.quickView =function quickView(id) {
     modal.style.zIndex = "10";
     modal.classList.add("active");
   });
-}
+};
 
 function getRatingImage(rating) {
   switch (rating) {
@@ -216,6 +216,6 @@ window.closeModal = function closeModal() {
   // hide the modal
   modal.classList.remove("active");
   modal.style.zIndex = "-1";
-}
+};
 
 export { fetchProducts, displayCard, AllProducts };
