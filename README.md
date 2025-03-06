@@ -134,7 +134,6 @@ Add new products in `js/products.json`:
 - Price calculations
 - Persistent storage
 
-
 ## Contributing
 
 1. Fork the repository
@@ -143,7 +142,6 @@ Add new products in `js/products.json`:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-
 ## Contact
 
-Kareem Mohamed - [in/Kareem-dev](https://linkedin/in/kareem-dev)
+Kareem Mohamed - [in/Kareem-dev](https://www.linkedin.com/in/kareem-dev/)
