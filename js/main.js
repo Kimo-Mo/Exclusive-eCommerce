@@ -30,7 +30,7 @@ function displayHeader() {
   header.innerHTML = `
     <nav class="container mx-auto px-6 lg:px-12 flex items-center justify-between">
       <a href=${
-        url.includes("index.html") || url === `${config.basePath}`
+        url.includes("index.html") || url === `${config.basePath}/`
           ? "#"
           : `${config.basePath}/index.html`
       } class="text-2xl font-bold tracking-[0.75px]">Exclusive</a>
