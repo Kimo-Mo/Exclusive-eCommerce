@@ -24,7 +24,7 @@ function displayCard(product) {
     <div class="card h-full rounded-sm shadow-md relative" data-product-id="${id}">
       <div class="relative overflow-hidden rounded-sm">
         <img
-          src="${config.basePath}/${image}"
+          src="${config.basePath}${image}"
           class="card-img-top"
           alt="${title}" />
         <button class="add_btn absolute bottom-[-42px] left-0 w-full h-[40px] bg-black text-white border-none outline-none transition-[300ms] cursor-pointer" onclick="window.AddToCart(${id})">Add To Cart</button>
@@ -52,7 +52,7 @@ function displayCard(product) {
       : rating == 4.5
       ? "Four Half"
       : "Five"
-  } Star.jpg" alt="Three stars" />
+  } Star.jpg" alt="Review Stars" />
           (${reviews})
         </div>
       </div>
