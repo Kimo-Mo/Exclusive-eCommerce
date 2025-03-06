@@ -2,7 +2,7 @@
 
 A modern, responsive e-commerce website built with vanilla JavaScript, featuring real-time shopping cart functionality, user authentication, and a seamless shopping experience.
 
-![Project Preview](./imgs/Exclusive-eCommerce.png)
+![Project Preview](/imgs/Exclusive-eCommerce.png)
 
 ## Features
 
