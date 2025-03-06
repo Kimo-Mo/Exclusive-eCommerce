@@ -64,14 +64,14 @@ function displayHeader() {
           isLoggedIn ? "flex" : "hidden"
         } md:hidden gap-2 items-center">
           <span id="log-out" class="cursor-pointer">log out</span>
-          <img class="rotate-180" src="/imgs/icons/Icon-logout.png" alt="logout" />
+          <img class="rotate-180" src="../imgs/icons/Icon-logout.png" alt="logout" />
         </li>
       </ul>
       <div class="hidden md:flex justify-between items-center gap-4">
         <a href=${
           url.includes("wish-list.html") ? "#" : "../pages/wish-list.html"
         } class="cursor-pointer relative">
-          <img src="/imgs/icons/heart.png" class="cursor-pointer" alt="heart icon" />
+          <img src="../imgs/icons/heart.png" class="cursor-pointer" alt="heart icon" />
           ${
             NumberOfWishItems > 0
               ? `<span class="bg-(--primary-color) text-white rounded-[50%] size-[20px] flex items-center justify-center p-1 absolute top-[-10px] right-[-12px]">${NumberOfWishItems}</span>`
@@ -81,7 +81,7 @@ function displayHeader() {
         <a href=${
           url.includes("cart.html") ? "#" : "../pages/cart.html"
         } class="cursor-pointer relative">
-          <img src="/imgs/icons/cart.png" class="cursor-pointer" alt="cart icon" />
+          <img src="../imgs/icons/cart.png" class="cursor-pointer" alt="cart icon" />
           ${
             NumberOfCartItems > 0
               ? `<span class="bg-(--primary-color) text-white rounded-[50%] size-[20px] flex items-center justify-center p-1 absolute top-[-5px] right-[-5px]">${NumberOfCartItems}</span>`
@@ -91,7 +91,7 @@ function displayHeader() {
         ${
           isLoggedIn
             ? `<span class="relative">
-                <img src="/imgs/icons/User=Off.png" alt="profile" class="cursor-pointer profileIcon" />
+                <img src="../imgs/icons/User=Off.png" alt="profile" class="cursor-pointer profileIcon" />
                   <ul class="dropdownProfileMenu opacity-0 capitalize absolute top-[99%] right-0 bg-white shadow-md rounded-md flex flex-col gap-4 p-6 w-[150px] transition-[150ms] -z-10">
                     <li class="cursor-pointer">${
                       url.includes("profile.html")
@@ -125,7 +125,7 @@ document.addEventListener("click", (e) => {
 document.addEventListener("click", (e) => {
   if (e.target.id === "log-out") {
     sessionStorage.clear();
-    window.location.href = "/index.html";
+    window.location.href = "../index.html";
   }
 });
 // =============== INITIALIZE HAMBURGER MENU ===============
@@ -191,24 +191,24 @@ footer.innerHTML = `
           </p>
           <img
             class="max-w-[160px] mb-3 cursor-pointer"
-            src="/imgs/appStore.png"
+            src="../imgs/appStore.png"
             alt="App Store" />
           <img
             class="max-w-[160px] mb-3 cursor-pointer"
-            src="/imgs/googlePlay.png"
+            src="../imgs/googlePlay.png"
             alt="Google Play" />
           <div class="icons flex gap-6 my-4">
             <a href="#">
-              <img src="/imgs/icons/Icon-Facebook.png" alt="facebook" />
+              <img src="../imgs/icons/Icon-Facebook.png" alt="facebook" />
             </a>
             <a href="#">
-              <img src="/imgs/icons/Icon-Instagram.png" alt="instagram" />
+              <img src="../imgs/icons/Icon-Instagram.png" alt="instagram" />
             </a>
             <a href="#">
-              <img src="/imgs/icons/Icon-Twitter.png" alt="twitter" />
+              <img src="../imgs/icons/Icon-Twitter.png" alt="twitter" />
             </a>
             <a href="#">
-              <img src="/imgs/icons/Icon-Linkedin.png" alt="linkedin" />
+              <img src="../imgs/icons/Icon-Linkedin.png" alt="linkedin" />
             </a>
           </div>
         </div>
@@ -245,7 +245,7 @@ function initToast() {
         <img
           onclick="deleteToast()"
           class="cursor-pointer size-[25px]"
-          src="/imgs/icons/icon-cancel.png"
+          src="../imgs/icons/icon-cancel.png"
           alt="delete" />
       </div>
     `;
@@ -320,7 +320,7 @@ const scrollUp = document.createElement("span");
 scrollUp.id = "scroll-up";
 scrollUp.className =
   "scrollUp size-[50px] text-[18px] md:text-[24px] fixed right-4 md:right-12 bottom-[-100%] hover:translate-y-[-5px] text-black bg-white flex items-center justify-center z-[9] rounded-[50%] transition-all duration-300 border-2 border-black cursor-pointer";
-scrollUp.innerHTML = `<img src="/imgs/icons/icons_arrow-up.jpg" alt="arrow up" />`;
+scrollUp.innerHTML = `<img src="../imgs/icons/icons_arrow-up.jpg" alt="arrow up" />`;
 document.body.append(scrollUp);
 
 function scrollUpFunc() {

@@ -1,6 +1,6 @@
 const mainProduct = {
   id: 17,
-  image: "/imgs/PS5-Controller.png",
+  image: "../imgs/PS5-Controller.png",
   title: "PS5-Controller",
   price: 180,
   originalPrice: 200,
