@@ -22,7 +22,7 @@ form.addEventListener("submit", (e) => {
       if (targetUser.password === user.password) {
         sessionStorage.setItem("currentUser", JSON.stringify(targetUser));
         sessionStorage.setItem("isLoggedIn", JSON.stringify(true));
-        window.location.href = "../index.html";
+        window.location.href = "/index.html";
       } else {
         setErrorMsg(password, passwordError, `password is incorrect`);
       }
