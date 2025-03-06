@@ -213,7 +213,7 @@ footer.innerHTML = `
               <img src="${config.basePath}/imgs/icons/Icon-Facebook.png" alt="facebook" />
             </a>
             <a href="#">
-              <img src="${config.basePath}/imgs/icons/Icon-Instagram.png" alt="instagram" />
+              <img src="${config.basePath}/imgs/icons/icon-instagram.png" alt="instagram" />
             </a>
             <a href="#">
               <img src="${config.basePath}/imgs/icons/Icon-Twitter.png" alt="twitter" />
