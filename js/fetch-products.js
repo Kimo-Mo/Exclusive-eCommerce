@@ -153,7 +153,7 @@ window.quickView = function quickView(id) {
         <div class="flex items-center gap-4">
           <img src="${config.basePath}/imgs/icons/${getRatingImage(
     product.rating
-  )} star.jpg" alt="${product.title}" />
+  )} Star.jpg" alt="${product.title}" />
           <span>(${product.reviews})</span>
         </div>
         <div class="flex gap-4 items-center">
