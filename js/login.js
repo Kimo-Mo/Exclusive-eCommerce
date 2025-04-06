@@ -1,3 +1,4 @@
+import config from "./config.js";
 // form inputs
 const form = document.getElementById("form");
 const email = document.getElementById("email");
@@ -22,7 +23,7 @@ form.addEventListener("submit", (e) => {
       if (targetUser.password === user.password) {
         sessionStorage.setItem("currentUser", JSON.stringify(targetUser));
         sessionStorage.setItem("isLoggedIn", JSON.stringify(true));
-        window.location.href = "../index.html";
+        window.location.href = `${config.basePath}/index.html`;
       } else {
         setErrorMsg(password, passwordError, `password is incorrect`);
       }

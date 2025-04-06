@@ -138,7 +138,7 @@ document.addEventListener("click", (e) => {
 document.addEventListener("click", (e) => {
   if (e.target.id === "log-out") {
     sessionStorage.clear();
-    window.location.href = "../index.html";
+    window.location.href = `${config.basePath}/index.html`;
   }
 });
 // =============== INITIALIZE HAMBURGER MENU ===============

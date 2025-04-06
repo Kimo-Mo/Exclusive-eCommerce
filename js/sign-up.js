@@ -1,3 +1,4 @@
+import config from "./config.js";
 // form inputs
 const form = document.getElementById("form");
 const name = document.getElementById("name");
@@ -27,7 +28,7 @@ form.addEventListener("submit", (e) => {
     localStorage.setItem("users", JSON.stringify(users));
     sessionStorage.setItem("currentUser", JSON.stringify(currentUser));
     sessionStorage.setItem("isLoggedIn", JSON.stringify(true));
-    window.location.href = "../index.html";
+    window.location.href = `${config.basePath}/index.html`;
   }
 });
 
