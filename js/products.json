@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "image": "./imgs/items/item-1.png",
+    "image": "../imgs/items/item-1.png",
     "title": "HAVIT HV-G92 Gamepad",
     "price": 120,
     "originalPrice": 160,
@@ -15,7 +15,7 @@
   },
   {
     "id": 2,
-    "image": "./imgs/items/item-2.png",
+    "image": "../imgs/items/item-2.png",
     "title": "AK-900 Wired Keyboard",
     "price": 960,
     "originalPrice": 1160,
@@ -29,7 +29,7 @@
   },
   {
     "id": 3,
-    "image": "./imgs/items/item-3.png",
+    "image": "../imgs/items/item-3.png",
     "title": "IPS LCD Gaming Monitor",
     "price": 370,
     "originalPrice": 400,
@@ -43,7 +43,7 @@
   },
   {
     "id": 4,
-    "image": "./imgs/items/item-4.png",
+    "image": "../imgs/items/item-4.png",
     "title": "S-Series Comfort Chair",
     "price": 375,
     "originalPrice": 400,
@@ -57,7 +57,7 @@
   },
   {
     "id": 5,
-    "image": "./imgs/items/item-5.png",
+    "image": "../imgs/items/item-5.png",
     "title": "The North Coat",
     "price": 260,
     "originalPrice": 360,
@@ -71,7 +71,7 @@
   },
   {
     "id": 6,
-    "image": "./imgs/items/item-6.png",
+    "image": "../imgs/items/item-6.png",
     "title": "RGB Liquid CPU Cooler",
     "price": 160,
     "originalPrice": 170,
@@ -85,7 +85,7 @@
   },
   {
     "id": 7,
-    "image": "./imgs/items/item-7.png",
+    "image": "../imgs/items/item-7.png",
     "title": "Gucci Duffle Bag",
     "price": 960,
     "originalPrice": 1160,
@@ -99,7 +99,7 @@
   },
   {
     "id": 8,
-    "image": "./imgs/items/item-8.png",
+    "image": "../imgs/items/item-8.png",
     "title": "Small Bookshelf",
     "price": 360,
     "originalPrice": 420,
@@ -113,7 +113,7 @@
   },
   {
     "id": 9,
-    "image": "./imgs/items/item-9.png",
+    "image": "../imgs/items/item-9.png",
     "title": "Breed Dry Dog Food",
     "price": 100,
     "originalPrice": null,
@@ -127,7 +127,7 @@
   },
   {
     "id": 10,
-    "image": "./imgs/items/item-10.png",
+    "image": "../imgs/items/item-10.png",
     "title": "CANON EOS DSLR Camera",
     "price": 360,
     "originalPrice": null,
@@ -141,7 +141,7 @@
   },
   {
     "id": 11,
-    "image": "./imgs/items/item-11.png",
+    "image": "../imgs/items/item-11.png",
     "title": "ASUS FHD Gaming Laptop",
     "price": 700,
     "originalPrice": null,
@@ -155,7 +155,7 @@
   },
   {
     "id": 12,
-    "image": "./imgs/items/item-16.png",
+    "image": "../imgs/items/item-16.png",
     "title": "Curology Product Set",
     "price": 500,
     "originalPrice": null,
@@ -169,7 +169,7 @@
   },
   {
     "id": 13,
-    "image": "./imgs/items/item-12.png",
+    "image": "../imgs/items/item-12.png",
     "title": "Kids Electric Car",
     "price": 960,
     "originalPrice": null,
@@ -183,7 +183,7 @@
   },
   {
     "id": 14,
-    "image": "./imgs/items/item-13.png",
+    "image": "../imgs/items/item-13.png",
     "title": "Jr. Zoom Soccer Cleats",
     "price": 1160,
     "originalPrice": null,
@@ -197,7 +197,7 @@
   },
   {
     "id": 15,
-    "image": "./imgs/items/item-14.png",
+    "image": "../imgs/items/item-14.png",
     "title": "GP11 Shooter USB Gamepad",
     "price": 660,
     "originalPrice": null,
@@ -211,7 +211,7 @@
   },
   {
     "id": 16,
-    "image": "./imgs/items/item-15.png",
+    "image": "../imgs/items/item-15.png",
     "title": "Quilted Satin Jacket",
     "price": 660,
     "originalPrice": null,

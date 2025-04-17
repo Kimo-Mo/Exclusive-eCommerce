@@ -2,7 +2,7 @@ import { showToast, updateHeaderAndNav, updateHeartIcons } from "./main.js";
 let AllProducts = [];
 async function fetchProducts() {
   try {
-    const response = await fetch(`/js/products.json`);
+    const response = await fetch(`../js/products.json`);
     const data = await response.json();
     AllProducts = data;
   } catch (error) {

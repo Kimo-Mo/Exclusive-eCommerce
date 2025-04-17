@@ -28,18 +28,15 @@ function displayHeader() {
   const createNavLink = (page, label) =>
     url.includes(page)
       ? `<a href="#" class="active">${label}</a>`
-      : `<a href="/pages/${page}">${label}</a>`;
+      : `<a href="../pages/${page}">${label}</a>`;
   header.innerHTML = `
     <nav class="container mx-auto px-6 lg:px-12 flex items-center justify-between">
       <a href=${
-        url.includes("index.html") ||
-        url === `exclusive-e-commerce-one.vercel.app`
-          ? "#"
-          : `/index.html`
+        url.includes("index.html") ? "#" : `../index.html`
       } class="text-2xl font-bold tracking-[0.75px]">Exclusive</a>
       <ul class="nav py-10 sm:py-0 px-6 sm:px-0 flex gap-12 bg-white">
         <li>${
-          url.includes("index.html") || url === `/`
+          url.includes("index.html")
             ? `<a href="#" class="active">Home</a>`
             : `<a href="../index.html">Home</a>`
         }</li>
@@ -75,7 +72,7 @@ function displayHeader() {
       </ul>
       <div class="hidden md:flex justify-between items-center gap-4">
         <a href=${
-          url.includes("wish-list.html") ? "#" : `/pages/wish-list.html`
+          url.includes("wish-list.html") ? "#" : `../pages/wish-list.html`
         } class="cursor-pointer relative">
           <img src="../imgs/icons/heart.png" class="cursor-pointer" alt="heart icon" />
           ${
@@ -85,7 +82,7 @@ function displayHeader() {
           }
         </a>
         <a href=${
-          url.includes("cart.html") ? "#" : `/pages/cart.html`
+          url.includes("cart.html") ? "#" : `../pages/cart.html`
         } class="cursor-pointer relative">
           <img src="../imgs/icons/cart.png" class="cursor-pointer" alt="cart icon" />
           ${
@@ -102,7 +99,7 @@ function displayHeader() {
                     <li class="cursor-pointer">${
                       url.includes("profile.html")
                         ? `<a href="#" class="active w-full inline-block">Profile</a>`
-                        : `<a href="/pages/profile.html" class="w-full inline-block">Profile</a>`
+                        : `<a href="../pages/profile.html" class="w-full inline-block">Profile</a>`
                     }</li>
                     <li id="log-out" class="cursor-pointer">log out</li>
                   </ul>
@@ -175,11 +172,11 @@ footer.innerHTML = `
       <div class="links">
         <h1 class="text-xl">Account</h1>
         <ul class="*:mb-4">
-          <li><a href="/pages/profile.html">My Account</a></li>
-          <li><a href="/pages/login.html">Login / Register</a></li>
-          <li><a href="/pages/cart.html">Cart</a></li>
-          <li><a href="/pages/wish-list.html">Wishlist</a></li>
-          <li><a href="/pages/all-products.html">Shop</a></li>
+          <li><a href="../pages/profile.html">My Account</a></li>
+          <li><a href="../pages/login.html">Login / Register</a></li>
+          <li><a href="../pages/cart.html">Cart</a></li>
+          <li><a href="../pages/wish-list.html">Wishlist</a></li>
+          <li><a href="../pages/all-products.html">Shop</a></li>
         </ul>
       </div>
       <div class="links">
@@ -188,7 +185,7 @@ footer.innerHTML = `
           <li><a href="#">Privacy Policy</a></li>
           <li><a href="#">Terms Of Use</a></li>
           <li><a href="#">FAQ</a></li>
-          <li><a href="/pages/contact.html">Contact</a></li>
+          <li><a href="../pages/contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="links">
