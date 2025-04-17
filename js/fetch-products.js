@@ -40,7 +40,7 @@ function displayCard(product) {
           }
         </div>
         <div class="rate flex items-center gap-2">
-            <img src="/imgs/icons/${
+            <img src="../imgs/icons/${
               rating == 1
                 ? "One"
                 : rating == 2
@@ -66,13 +66,11 @@ function displayCard(product) {
           product.isWishList ? "bg-(--primary-color)" : "bg-white"
         } hover:bg-(--primary-color) transition-[150ms]" onclick="window.AddToWishList(${id},this)">
           <img
-            src="/imgs/icons/heart small.png"
+            src="../imgs/icons/heart small.png"
             alt="add to wish list" />
       </button>
       <button class="eye absolute top-[54px] cursor-pointer bg-white hover:bg-(--primary-color) transition-[150ms]" onclick="window.quickView(${id})">
-          <img src="${
-            config.basePath
-          }/imgs/icons/Quick View.png" alt="Quick View" />
+          <img src="../imgs/icons/Quick View.png" alt="Quick View" />
       </button>
     </div>
   `;
@@ -142,7 +140,7 @@ window.quickView = function quickView(id) {
     <button
       class="absolute top-2 right-2 rotate-[45deg] bg-(--primary-color) text-white border-none outline-none p-1 sm:p-2 rounded-[50%] cursor-pointer z-10"
       onclick="window.closeModal()">
-      <img src="/imgs/icons/icon-plus.png" alt="close" />
+      <img src="../imgs/icons/icon-plus.png" alt="close" />
     </button>
     <div class="flex flex-col md:flex-row gap-y-6 gap-x-10 justify-center">
       <div class="flex-1 flex justify-center">
@@ -151,7 +149,7 @@ window.quickView = function quickView(id) {
       <div class="flex-1 flex flex-col gap-4 md:gap-7">
         <h1 class="text-2xl">${product.title}</h1>
         <div class="flex items-center gap-4">
-          <img src="/imgs/icons/${getRatingImage(
+          <img src="../imgs/icons/${getRatingImage(
             product.rating
           )} Star.jpg" alt="${product.title}" />
           <span>(${product.reviews})</span>
@@ -176,9 +174,7 @@ window.quickView = function quickView(id) {
             class="heart py-4 px-6 lg:px-12 inline-block h-[50px] rounded-sm transition-[150ms] border border-gray-300 ${
               product.isWishList ? "bg-(--primary-color)" : "bg-white"
             } hover:bg-(--hover-btn-color) cursor-pointer">
-            <img src="${
-              config.basePath
-            }/imgs/icons/heart small.png" alt="add to wishlist" />
+            <img src="../imgs/icons/heart small.png" alt="add to wishlist" />
           </button>
         </div>
       </div>

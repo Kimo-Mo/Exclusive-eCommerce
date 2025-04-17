@@ -30,7 +30,7 @@ function displayItem(item) {
     <div
       class="wishListItem shadow-sm p-4 md:p-6 rounded-sm flex items-center justify-between gap-4 flex-col md:flex-row">
       <div class="flex items-center justify-between md:justify-normal gap-4 flex-1 w-full">
-        <img class="size-[25px] cursor-pointer order-1 md:order-none" src="/imgs/icons/icon-cancel.png" alt="delete icon" onclick="window.removeFromWishList(${id})" />
+        <img class="size-[25px] cursor-pointer order-1 md:order-none" src="../imgs/icons/icon-cancel.png" alt="delete icon" onclick="window.removeFromWishList(${id})" />
         <img class="h-16" src="${image}" alt="${title}" />
         <p>${title}</p>
       </div>
