@@ -3,7 +3,7 @@ import { showToast, updateHeaderAndNav, updateHeartIcons } from "./main.js";
 let AllProducts = [];
 async function fetchProducts() {
   try {
-    const response = await fetch(`${config.basePath}/js/products.json`);
+    const response = await fetch(`/js/products.json`);
     const data = await response.json();
     AllProducts = data;
   } catch (error) {
@@ -24,7 +24,7 @@ function displayCard(product) {
     <div class="card h-full rounded-sm shadow-md relative" data-product-id="${id}">
       <div class="relative overflow-hidden rounded-sm">
         <img
-          src="${config.basePath}${image}"
+          src="${image}"
           class="card-img-top"
           alt="${title}" />
         <button class="add_btn absolute bottom-[-42px] left-0 w-full h-[40px] bg-black text-white border-none outline-none transition-[300ms] cursor-pointer" onclick="window.AddToCart(${id})">Add To Cart</button>
@@ -40,19 +40,19 @@ function displayCard(product) {
           }
         </div>
         <div class="rate flex items-center gap-2">
-            <img src="${config.basePath}/imgs/icons/${
-    rating == 1
-      ? "One"
-      : rating == 2
-      ? "Two"
-      : rating == 3
-      ? "Three"
-      : rating == 4
-      ? "Four"
-      : rating == 4.5
-      ? "Four Half"
-      : "Five"
-  } Star.jpg" alt="Review Stars" />
+            <img src="/imgs/icons/${
+              rating == 1
+                ? "One"
+                : rating == 2
+                ? "Two"
+                : rating == 3
+                ? "Three"
+                : rating == 4
+                ? "Four"
+                : rating == 4.5
+                ? "Four Half"
+                : "Five"
+            } Star.jpg" alt="Review Stars" />
           (${reviews})
         </div>
       </div>
@@ -66,7 +66,7 @@ function displayCard(product) {
           product.isWishList ? "bg-(--primary-color)" : "bg-white"
         } hover:bg-(--primary-color) transition-[150ms]" onclick="window.AddToWishList(${id},this)">
           <img
-            src="${config.basePath}/imgs/icons/heart small.png"
+            src="/imgs/icons/heart small.png"
             alt="add to wish list" />
       </button>
       <button class="eye absolute top-[54px] cursor-pointer bg-white hover:bg-(--primary-color) transition-[150ms]" onclick="window.quickView(${id})">
@@ -142,18 +142,18 @@ window.quickView = function quickView(id) {
     <button
       class="absolute top-2 right-2 rotate-[45deg] bg-(--primary-color) text-white border-none outline-none p-1 sm:p-2 rounded-[50%] cursor-pointer z-10"
       onclick="window.closeModal()">
-      <img src="${config.basePath}/imgs/icons/icon-plus.png" alt="close" />
+      <img src="/imgs/icons/icon-plus.png" alt="close" />
     </button>
     <div class="flex flex-col md:flex-row gap-y-6 gap-x-10 justify-center">
       <div class="flex-1 flex justify-center">
-        <img src="${config.basePath}${product.image}" alt="${product.title}" />
+        <img src="${product.image}" alt="${product.title}" />
       </div>
       <div class="flex-1 flex flex-col gap-4 md:gap-7">
         <h1 class="text-2xl">${product.title}</h1>
         <div class="flex items-center gap-4">
-          <img src="${config.basePath}/imgs/icons/${getRatingImage(
-    product.rating
-  )} Star.jpg" alt="${product.title}" />
+          <img src="/imgs/icons/${getRatingImage(
+            product.rating
+          )} Star.jpg" alt="${product.title}" />
           <span>(${product.reviews})</span>
         </div>
         <div class="flex gap-4 items-center">

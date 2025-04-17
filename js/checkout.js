@@ -66,6 +66,6 @@ form.addEventListener("submit", function (e) {
   updateHeaderAndNav();
   // Redirect to home page
   setTimeout(() => {
-    window.location.href = `${config.basePath}/index.html`;
+    window.location.href = `/index.html`;
   }, 5000);
 });

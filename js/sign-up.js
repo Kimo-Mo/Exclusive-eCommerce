@@ -4,7 +4,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import app from "./firebase.js";
-import { doc , setDoc } from "firebase/firestore";
+import { doc, setDoc } from "firebase/firestore";
 import { db } from "./firebase.js";
 import config from "./config.js";
 // form inputs
@@ -19,7 +19,6 @@ const nameError = document.getElementById("errName");
 const emailError = document.getElementById("errEmail");
 const passwordError = document.getElementById("errPass");
 const auth = getAuth(app);
-
 
 // form submit
 form.addEventListener("submit", async (e) => {
@@ -52,7 +51,7 @@ form.addEventListener("submit", async (e) => {
         address: "",
       });
       sessionStorage.setItem("isLoggedIn", JSON.stringify(true));
-      window.location.href = `${config.basePath}/index.html`;
+      window.location.href = `/index.html`;
     } catch (error) {
       handleFirebaseError(error, emailError, passwordError);
     } finally {

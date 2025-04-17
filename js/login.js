@@ -30,7 +30,7 @@ form.addEventListener("submit", async (e) => {
         throw new Error("No credentials returned");
       }
       sessionStorage.setItem("isLoggedIn", JSON.stringify(true));
-      window.location.href = `${config.basePath}/index.html`;
+      window.location.href = `/index.html`;
     } catch (error) {
       handleFirebaseError(error, emailError, passwordError);
     } finally {

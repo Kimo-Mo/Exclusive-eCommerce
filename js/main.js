@@ -28,19 +28,17 @@ function displayHeader() {
   const createNavLink = (page, label) =>
     url.includes(page)
       ? `<a href="#" class="active">${label}</a>`
-      : `<a href="${config.basePath}/pages/${page}">${label}</a>`;
+      : `<a href="/pages/${page}">${label}</a>`;
   header.innerHTML = `
     <nav class="container mx-auto px-6 lg:px-12 flex items-center justify-between">
       <a href=${
-        url.includes("index.html") || url === `${config.basePath}/`
-          ? "#"
-          : `${config.basePath}/index.html`
+        url.includes("index.html") || url === `/` ? "#" : `/index.html`
       } class="text-2xl font-bold tracking-[0.75px]">Exclusive</a>
       <ul class="nav py-10 sm:py-0 px-6 sm:px-0 flex gap-12 bg-white">
         <li>${
-          url.includes("index.html") || url === `${config.basePath}/`
+          url.includes("index.html") || url === `/`
             ? `<a href="#" class="active">Home</a>`
-            : `<a href="${config.basePath}/index.html">Home</a>`
+            : `<a href="/index.html">Home</a>`
         }</li>
         <li>
           ${createNavLink("contact.html", "Contact")}
@@ -76,9 +74,7 @@ function displayHeader() {
       </ul>
       <div class="hidden md:flex justify-between items-center gap-4">
         <a href=${
-          url.includes("wish-list.html")
-            ? "#"
-            : `${config.basePath}/pages/wish-list.html`
+          url.includes("wish-list.html") ? "#" : `/pages/wish-list.html`
         } class="cursor-pointer relative">
           <img src="${
             config.basePath
@@ -90,7 +86,7 @@ function displayHeader() {
           }
         </a>
         <a href=${
-          url.includes("cart.html") ? "#" : `${config.basePath}/pages/cart.html`
+          url.includes("cart.html") ? "#" : `/pages/cart.html`
         } class="cursor-pointer relative">
           <img src="${
             config.basePath
@@ -111,7 +107,7 @@ function displayHeader() {
                     <li class="cursor-pointer">${
                       url.includes("profile.html")
                         ? `<a href="#" class="active w-full inline-block">Profile</a>`
-                        : `<a href="${config.basePath}/pages/profile.html" class="w-full inline-block">Profile</a>`
+                        : `<a href="/pages/profile.html" class="w-full inline-block">Profile</a>`
                     }</li>
                     <li id="log-out" class="cursor-pointer">log out</li>
                   </ul>
@@ -142,7 +138,7 @@ document.addEventListener("click", (e) => {
     const auth = getAuth(app);
     signOut(auth);
     sessionStorage.clear();
-    window.location.href = `${config.basePath}/index.html`;
+    window.location.href = `/index.html`;
   }
 });
 // =============== INITIALIZE HAMBURGER MENU ===============
@@ -184,11 +180,11 @@ footer.innerHTML = `
       <div class="links">
         <h1 class="text-xl">Account</h1>
         <ul class="*:mb-4">
-          <li><a href="${config.basePath}/pages/profile.html">My Account</a></li>
-          <li><a href="${config.basePath}/pages/login.html">Login / Register</a></li>
-          <li><a href="${config.basePath}/pages/cart.html">Cart</a></li>
-          <li><a href="${config.basePath}/pages/wish-list.html">Wishlist</a></li>
-          <li><a href="${config.basePath}/pages/all-products.html">Shop</a></li>
+          <li><a href="/pages/profile.html">My Account</a></li>
+          <li><a href="/pages/login.html">Login / Register</a></li>
+          <li><a href="/pages/cart.html">Cart</a></li>
+          <li><a href="/pages/wish-list.html">Wishlist</a></li>
+          <li><a href="/pages/all-products.html">Shop</a></li>
         </ul>
       </div>
       <div class="links">
@@ -197,7 +193,7 @@ footer.innerHTML = `
           <li><a href="#">Privacy Policy</a></li>
           <li><a href="#">Terms Of Use</a></li>
           <li><a href="#">FAQ</a></li>
-          <li><a href="${config.basePath}/pages/contact.html">Contact</a></li>
+          <li><a href="/pages/contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="links">
@@ -208,24 +204,24 @@ footer.innerHTML = `
           </p>
           <img
             class="max-w-[160px] mb-3 cursor-pointer"
-            src="${config.basePath}/imgs/appStore.png"
+            src="/imgs/appStore.png"
             alt="App Store" />
           <img
             class="max-w-[160px] mb-3 cursor-pointer"
-            src="${config.basePath}/imgs/googlePlay.png"
+            src="/imgs/googlePlay.png"
             alt="Google Play" />
           <div class="icons flex gap-6 my-4">
             <a href="#">
-              <img src="${config.basePath}/imgs/icons/Icon-Facebook.png" alt="facebook" />
+              <img src="/imgs/icons/Icon-Facebook.png" alt="facebook" />
             </a>
             <a href="#">
-              <img src="${config.basePath}/imgs/icons/icon-instagram.png" alt="instagram" />
+              <img src="/imgs/icons/icon-instagram.png" alt="instagram" />
             </a>
             <a href="#">
-              <img src="${config.basePath}/imgs/icons/Icon-Twitter.png" alt="twitter" />
+              <img src="/imgs/icons/Icon-Twitter.png" alt="twitter" />
             </a>
             <a href="#">
-              <img src="${config.basePath}/imgs/icons/Icon-Linkedin.png" alt="linkedin" />
+              <img src="/imgs/icons/Icon-Linkedin.png" alt="linkedin" />
             </a>
           </div>
         </div>
@@ -261,7 +257,7 @@ function initToast() {
         <p class="section_category_p"></p>
         <img
           class="cursor-pointer size-[25px]"
-          src="${config.basePath}/imgs/icons/icon-cancel.png"
+          src="/imgs/icons/icon-cancel.png"
           alt="delete" />
       </div>
     `;
@@ -338,7 +334,7 @@ const scrollUp = document.createElement("span");
 scrollUp.id = "scroll-up";
 scrollUp.className =
   "scrollUp size-[50px] text-[18px] md:text-[24px] fixed right-4 md:right-12 bottom-[-100%] hover:translate-y-[-5px] text-black bg-white flex items-center justify-center z-[9] rounded-[50%] transition-all duration-300 border-2 border-black cursor-pointer";
-scrollUp.innerHTML = `<img src="${config.basePath}/imgs/icons/icons_arrow-up.jpg" alt="arrow up" />`;
+scrollUp.innerHTML = `<img src="/imgs/icons/icons_arrow-up.jpg" alt="arrow up" />`;
 document.body.append(scrollUp);
 
 function scrollUpFunc() {

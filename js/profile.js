@@ -40,13 +40,12 @@ window.addEventListener("load", () => {
       const currentUser = {
         displayName: user.displayName,
         email: user.email,
-        address:
-          userData?.address || "",
+        address: userData?.address || "",
       };
       fillFormWithUserData(currentUser);
     } else {
       // No user is signed in, redirect to login
-      window.location.href = `${config.basePath}/pages/login.html`;
+      window.location.href = `/pages/login.html`;
     }
   });
 });
