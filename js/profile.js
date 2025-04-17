@@ -10,7 +10,6 @@ import { showToast } from "./main.js";
 import app from "./firebase.js";
 import { doc, setDoc, getDoc } from "firebase/firestore";
 import { db } from "./firebase.js";
-import config from "./config.js";
 
 // form inputs
 const name = document.getElementById("name");

@@ -6,7 +6,7 @@ import {
 import app from "./firebase.js";
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "./firebase.js";
-import config from "./config.js";
+
 // form inputs
 const form = document.getElementById("form");
 const submitButton = document.getElementById("submitBtn");
@@ -51,7 +51,7 @@ form.addEventListener("submit", async (e) => {
         address: "",
       });
       sessionStorage.setItem("isLoggedIn", JSON.stringify(true));
-      window.location.href = `/index.html`;
+      window.location.href = `../index.html`;
     } catch (error) {
       handleFirebaseError(error, emailError, passwordError);
     } finally {

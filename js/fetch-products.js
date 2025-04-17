@@ -1,4 +1,3 @@
-import config from "./config.js";
 import { showToast, updateHeaderAndNav, updateHeartIcons } from "./main.js";
 let AllProducts = [];
 async function fetchProducts() {

@@ -1,5 +1,5 @@
 import { showToast, updateHeaderAndNav } from "./main.js";
-import config from "./config.js";
+
 // get cart items form local storage
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 

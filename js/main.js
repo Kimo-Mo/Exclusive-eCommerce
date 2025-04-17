@@ -1,6 +1,6 @@
 import { getAuth, signOut } from "firebase/auth";
 import app from "./firebase.js";
-import config from "./config.js";
+
 import { ScrollReveal } from "./scrollreveal.min.js";
 // get url
 const url = window.location.pathname;
@@ -32,13 +32,16 @@ function displayHeader() {
   header.innerHTML = `
     <nav class="container mx-auto px-6 lg:px-12 flex items-center justify-between">
       <a href=${
-        url.includes("index.html") || url === `/` ? "#" : `/index.html`
+        url.includes("index.html") ||
+        url === `exclusive-e-commerce-one.vercel.app`
+          ? "#"
+          : `/index.html`
       } class="text-2xl font-bold tracking-[0.75px]">Exclusive</a>
       <ul class="nav py-10 sm:py-0 px-6 sm:px-0 flex gap-12 bg-white">
         <li>${
           url.includes("index.html") || url === `/`
             ? `<a href="#" class="active">Home</a>`
-            : `<a href="/index.html">Home</a>`
+            : `<a href="../index.html">Home</a>`
         }</li>
         <li>
           ${createNavLink("contact.html", "Contact")}
@@ -130,7 +133,7 @@ document.addEventListener("click", (e) => {
     const auth = getAuth(app);
     signOut(auth);
     sessionStorage.clear();
-    window.location.href = `/index.html`;
+    window.location.href = `../index.html`;
   }
 });
 // =============== INITIALIZE HAMBURGER MENU ===============

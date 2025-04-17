@@ -1,4 +1,3 @@
-import config from "./config.js";
 import { showToast, updateHeaderAndNav } from "./main.js";
 // get cart items form local storage
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -66,6 +65,6 @@ form.addEventListener("submit", function (e) {
   updateHeaderAndNav();
   // Redirect to home page
   setTimeout(() => {
-    window.location.href = `/index.html`;
+    window.location.href = `../index.html`;
   }, 5000);
 });

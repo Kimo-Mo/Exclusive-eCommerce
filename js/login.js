@@ -1,6 +1,6 @@
 import app from "./firebase.js";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import config from "./config.js";
+
 // form inputs
 const form = document.getElementById("form");
 const submitButton = document.getElementById("submitBtn");
@@ -30,7 +30,7 @@ form.addEventListener("submit", async (e) => {
         throw new Error("No credentials returned");
       }
       sessionStorage.setItem("isLoggedIn", JSON.stringify(true));
-      window.location.href = `/index.html`;
+      window.location.href = `../index.html`;
     } catch (error) {
       handleFirebaseError(error, emailError, passwordError);
     } finally {

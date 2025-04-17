@@ -1,4 +1,3 @@
-import config from "./config.js";
 import { showToast, updateHeaderAndNav } from "./main.js";
 // get wish list items form local storage
 let wishList = JSON.parse(localStorage.getItem("wishList")) || [];
