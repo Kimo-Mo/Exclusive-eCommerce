@@ -1,3 +1,5 @@
+import { getAuth, signOut } from "firebase/auth";
+import app from "./firebase.js";
 import config from "./config.js";
 import { ScrollReveal } from "./scrollreveal.min.js";
 // get url
@@ -137,6 +139,8 @@ document.addEventListener("click", (e) => {
 // handle log out
 document.addEventListener("click", (e) => {
   if (e.target.id === "log-out") {
+    const auth = getAuth(app);
+    signOut(auth);
     sessionStorage.clear();
     window.location.href = `${config.basePath}/index.html`;
   }

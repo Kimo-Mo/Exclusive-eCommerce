@@ -1,4 +1,17 @@
+import {
+  getAuth,
+  updateProfile,
+  updateEmail,
+  updatePassword,
+  EmailAuthProvider,
+  reauthenticateWithCredential,
+} from "firebase/auth";
 import { showToast } from "./main.js";
+import app from "./firebase.js";
+import { doc, setDoc, getDoc } from "firebase/firestore";
+import { db } from "./firebase.js";
+import config from "./config.js";
+
 // form inputs
 const name = document.getElementById("name");
 const email = document.getElementById("email");
@@ -15,51 +28,103 @@ const passError = document.getElementById("errPass");
 const newPassError = document.getElementById("errNewPass");
 const ConfirmNewPassError = document.getElementById("errConfirmNewPass");
 
-//
+const auth = getAuth(app);
 
 // fill inputs with current user data
 window.addEventListener("load", () => {
-  const currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
-  if (currentUser) {
-    fillFormWithUserData(currentUser);
-  }
+  auth.onAuthStateChanged(async (user) => {
+    if (user) {
+      const userDoc = await getDoc(doc(db, "users", user.uid));
+      const userData = userDoc.data();
+      // User is signed in
+      const currentUser = {
+        displayName: user.displayName,
+        email: user.email,
+        address:
+          userData?.address || "",
+      };
+      fillFormWithUserData(currentUser);
+    } else {
+      // No user is signed in, redirect to login
+      window.location.href = `${config.basePath}/pages/login.html`;
+    }
+  });
 });
+
 // form submit
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
   validateInputs();
+
   if (isFormValid()) {
-    const users = JSON.parse(localStorage.getItem("users"));
-    const currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
-    const updatedUser = {
-      ...currentUser,
-      name: name.value,
-      email: email.value,
-      password:
-        password.value.trim() !== ""
-          ? newPassword.value
-          : currentUser?.password,
-      address: address.value,
-    };
-    const index = users.findIndex((u) => u.email === currentUser?.email);
-    users[index] = updatedUser;
-    localStorage.setItem("users", JSON.stringify(users));
-    sessionStorage.setItem("currentUser", JSON.stringify(updatedUser));
-    fillFormWithUserData(updatedUser);
-    resetPasswordFields();
-    showToast("Profile updated successfully");
+    try {
+      updateBtn.style.cursor = "no-drop";
+      updateBtn.disabled = true;
+      updateBtn.textContent = "Saving Changes...";
+
+      const user = auth.currentUser;
+
+      if (!user) {
+        throw new Error("No authenticated user found");
+      }
+
+      // Update display name
+      if (name.value.trim() !== user.displayName) {
+        await updateProfile(user, {
+          displayName: name.value.trim(),
+        });
+      }
+
+      // Update email if changed
+      if (email.value.trim() !== user.email) {
+        await updateEmail(user, email.value.trim());
+      }
+
+      // check if address is changed
+      if (address.value.trim() !== user.address) {
+        await setDoc(doc(db, "users", user.uid), {
+          displayName: name.value.trim(),
+          email: email.value.trim(),
+          address: address.value.trim(),
+        });
+      }
+
+      // Update password if provided
+      if (password.value.trim()) {
+        // Re-authenticate user before password change
+        const credential = EmailAuthProvider.credential(
+          user.email,
+          password.value.trim()
+        );
+
+        await reauthenticateWithCredential(user, credential);
+        await updatePassword(user, newPassword.value.trim());
+      }
+      // Reset password fields and show success message
+      resetPasswordFields();
+      showToast("Profile updated successfully");
+    } catch (error) {
+      handleUpdateError(error);
+    } finally {
+      updateBtn.style.cursor = "pointer";
+      updateBtn.disabled = false;
+      updateBtn.textContent = "Save Changes";
+    }
   }
 });
+
 function fillFormWithUserData(user) {
-  name.value = user.name;
+  name.value = user.displayName;
   email.value = user.email;
   user.address && (address.value = user.address);
 }
+
 function resetPasswordFields() {
   password.value = "";
   newPassword.value = "";
   ConfirmNewPassword.value = "";
 }
+
 function isFormValid() {
   return (
     !nameError.innerText &&
@@ -69,6 +134,7 @@ function isFormValid() {
     !ConfirmNewPassError.innerText
   );
 }
+
 function validateInputs() {
   validateField(name, nameError, "name", 3, 20);
   validateField(email, EmailError, "email", 0, Infinity, checkEmail);
@@ -86,6 +152,7 @@ function validateInputs() {
     );
   }
 }
+
 function validateField(
   input,
   error,
@@ -107,15 +174,18 @@ function validateField(
     removeErrorMsg(error);
   }
 }
+
 function checkEmail(email) {
-  const users = JSON.parse(localStorage.getItem("users")) || [];
-  const currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
-  return !users.find((u) => u.email === email) || currentUser?.email === email;
+  // Only validate email format, Firebase handles uniqueness
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return regex.test(email);
 }
+
 function checkPassword(password) {
-  const currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
-  return currentUser?.password === password;
+  // Password verification is handled by Firebase re-authentication
+  return password.length >= 6;
 }
+
 function checkPasswordMatch(ConfirmNewPassword) {
   return newPassword.value === ConfirmNewPassword;
 }
@@ -124,7 +194,28 @@ function setErrorMsg(error, message) {
   error.style.marginTop = "8px";
   error.innerText = message;
 }
+
 function removeErrorMsg(error) {
   error.style.marginTop = "0";
   error.innerText = "";
+}
+
+function handleUpdateError(error) {
+  switch (error.code) {
+    case "auth/requires-recent-login":
+      setErrorMsg(passError, "Please re-enter your password to make changes");
+      break;
+    case "auth/email-already-in-use":
+      setErrorMsg(EmailError, "Email is already in use");
+      break;
+    case "auth/invalid-credential":
+      setErrorMsg(passError, "Current password is incorrect");
+      break;
+    case "auth/weak-password":
+      setErrorMsg(newPassError, "New password is too weak");
+      break;
+    default:
+      console.error("Profile update error:", error);
+      showToast("Failed to update profile");
+  }
 }
