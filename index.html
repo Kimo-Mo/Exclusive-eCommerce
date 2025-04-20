@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="/imgs/K-logo.png" type="image/x-icon" />
+    <title>Exclusive - Home</title>
+    <meta name="description" content="Exclusive - E-Commerce" />
+    <!-- Tailwind -->
+    <link rel="stylesheet" href="/src/style/style.css" />
+  </head>
+
+  <body>
+    <main>
+      <section class="landing pt-10 mt-[75px]">
+        <div class="container mx-auto px-6 lg:px-12">
+          <div
+            class="flex flex-col md:flex-row gap-4 bg-black text-white p-5 md:p-10">
+            <div
+              class="heroInfo flex-1 flex flex-col justify-center items-start gap-4 p-5 md:p-0">
+              <p class="flex items-center gap-4">
+                <img
+                  class="w-[60px]"
+                  src="/imgs/pngimg.com - sony_logo_PNG5.png"
+                  alt="sony logo" />
+                <span class="text-lg">Controller for PlayStation 5</span>
+              </p>
+              <h1
+                class="text-3xl sm:text-2xl md:text-3xl xl:text-5xl font-bold tracking-[3px] leading-[1.2]">
+                Up to 10% <br />
+                off Voucher
+              </h1>
+              <p>
+                <a
+                  class="pb-1 border-b border-gray-300 mr-2"
+                  href="./pages/product-details.html">
+                  Shop Now
+                </a>
+                <img
+                  class="inline-block"
+                  src="/imgs/icons/arrow-right.svg"
+                  alt="right arrow" />
+              </p>
+            </div>
+            <div class="flex-1 flex justify-center items-center">
+              <img
+                class="heroImg"
+                src="/imgs/PS5-Controller.webp"
+                alt="PS5-Controller" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="container mx-auto px-6 lg:px-12 my-8 py-8 text-gray-300">
+        <hr />
+      </div>
+      <section class="sales">
+        <div class="container mx-auto px-6 lg:px-12">
+          <div class="section_category">
+            <p class="section_category_p">Today's</p>
+          </div>
+          <div class="section_header mb-0">
+            <h1 class="section_title">Flash Sale</h1>
+            <div>
+              <div
+                class="time_type flex justify-between items-center *:text-xs *:font-medium *:inline-block">
+                <span>Days</span>
+                <span>Hours</span>
+                <span>Minutes</span>
+                <span>Seconds</span>
+              </div>
+              <p class="text-3xl font-bold tracking-[1.3px]" id="demo"></p>
+            </div>
+          </div>
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 items-center justify-between justify-items-center gap-8 mb-16"
+            id="flash_sale"></div>
+          <div class="text-center w-full">
+            <a
+              class="py-4 px-12 inline-block h-[50px] rounded-sm transition-[150ms] bg-(--primary-color) text-white hover:bg-(--hover-btn-color)"
+              href="./pages/all-products.html">
+              View All Products
+            </a>
+          </div>
+        </div>
+      </section>
+      <div class="container mx-auto px-6 lg:px-12 my-8 py-8 text-gray-300">
+        <hr />
+      </div>
+      <section class="categories">
+        <div class="container mx-auto px-6 lg:px-12">
+          <div class="section_category">
+            <p class="section_category_p">Categories</p>
+          </div>
+          <div class="section_header">
+            <h1 class="section_title">Browse By Category</h1>
+          </div>
+          <div
+            class="grid justify-between items-center justify-items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-8 *:text-center *:w-[90%] *:p-4 *:flex *:flex-col *:justify-center *:items-center *:rounded-sm *:shadow-sm *:border *:border-gray-100 *:transition-[150ms] *:hover:bg-(--primary-color) *:hover:border-(--primary-color)">
+            <div class="cat">
+              <img src="/imgs/icons/phone.png" alt="Phones" />
+              <p class="mt-3">Phones</p>
+            </div>
+            <div class="cat">
+              <img src="/imgs/icons/computer.png" alt="Computers" />
+              <p class="mt-3">Computers</p>
+            </div>
+            <div class="cat">
+              <img src="/imgs/icons/watch.png" alt="SmartWatch" />
+              <p class="mt-3">SmartWatch</p>
+            </div>
+            <div class="cat">
+              <img src="/imgs/icons/camera.png" alt="Camera" />
+              <p class="mt-3">Camera</p>
+            </div>
+            <div class="cat">
+              <img src="/imgs/icons/headphone.png" alt="HeadPhones" />
+              <p class="mt-3">HeadPhones</p>
+            </div>
+            <div class="cat">
+              <img src="/imgs/icons/gaming.png" alt="Gaming" />
+              <p class="mt-3">Gaming</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="container mx-auto px-6 lg:px-12 my-8 py-8 text-gray-300">
+        <hr />
+      </div>
+      <section class="best">
+        <div class="container mx-auto px-6 lg:px-12">
+          <div class="section_category">
+            <p class="section_category_p">This Month</p>
+          </div>
+          <div class="section_header">
+            <h1 class="section_title">Best Selling Products</h1>
+          </div>
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 items-center justify-between justify-items-center gap-8"
+            id="best"></div>
+        </div>
+      </section>
+      <section class="trending mt-32">
+        <div class="container mx-auto px-6 lg:px-12">
+          <div
+            class="flex justify-center md:justify-between gap-y-8 flex-wrap md:flex-nowrap items-center px-6 lg:px-12 py-20 bg-black text-white">
+            <div class="flex flex-col trendingInfo">
+              <p class="text-red-500">Categories</p>
+              <h2 class="my-8 text-5xl">Enhance Your Music Experience</h2>
+              <a
+                href="#ourProducts"
+                class="text-white bg-(--primary-color) hover:bg-(--hover-btn-color) transition-[150ms] py-2 px-4 w-fit">
+                Buy Now!
+              </a>
+            </div>
+            <div>
+              <img class="speakerImg" src="/imgs/speaker.png" alt="speaker" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="container mx-auto px-6 lg:px-12 my-8 py-8 text-gray-300">
+        <hr />
+      </div>
+      <section class="products" id="ourProducts">
+        <div class="container mx-auto px-6 lg:px-12">
+          <div class="section_category">
+            <p class="section_category_p">Our Products</p>
+          </div>
+          <div class="section_header">
+            <h1 class="section_title">Explore Our Products</h1>
+          </div>
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center justify-between justify-items-center mb-16"
+            id="products"></div>
+          <div class="text-center w-full">
+            <a
+              class="py-4 px-12 inline-block h-[50px] rounded-sm transition-[150ms] bg-(--primary-color) text-white hover:bg-(--hover-btn-color)"
+              href="./pages/all-products.html">
+              View All Products
+            </a>
+          </div>
+        </div>
+      </section>
+      <div class="container mx-auto px-6 lg:px-12 my-8 py-8 text-gray-300">
+        <hr />
+      </div>
+      <section class="features">
+        <div class="container mx-auto px-6 lg:px-12">
+          <div class="section_category">
+            <p class="section_category_p">Featured</p>
+          </div>
+          <div class="section_header">
+            <h1 class="section_title">New Arrival</h1>
+          </div>
+          <div class="wrapper flex flex-col lg:flex-row gap-4 mb-[140px]">
+            <div class="flex-1">
+              <div class="gallery_img h-full">
+                <img src="/imgs/gallery/ps5.png" alt="PlayStation" />
+                <div class="info">
+                  <h2>PlayStation 5</h2>
+                  <p>Black and White version of the PS5 coming out on sale.</p>
+                  <a class="underline" href="./pages/all-products.html">
+                    Shop Now
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-1 flex-col justify-between gap-4">
+              <div class="gallery_img">
+                <img
+                  src="/imgs/gallery/womens_collection.jpg"
+                  alt="Women's Collections" />
+                <div class="info">
+                  <h2>Women&apos;s Collections</h2>
+                  <p>Featured woman collections that give you another vibe.</p>
+                  <a class="underline" href="./pages/all-products.html">
+                    Shop Now
+                  </a>
+                </div>
+              </div>
+              <div class="flex flex-col sm:flex-row gap-4">
+                <div class="gallery_img flex-1">
+                  <img src="/imgs/gallery/speakers.png" alt="Speakers" />
+                  <div class="info">
+                    <h2>Speakers</h2>
+                    <p>Amazon wireless speakers</p>
+                    <a class="underline" href="./pages/all-products.html">
+                      Shop Now
+                    </a>
+                  </div>
+                </div>
+                <div class="gallery_img flex-1">
+                  <img src="/imgs/gallery/gucci.png" alt="Perfume" />
+                  <div class="info">
+                    <h2>Perfume</h2>
+                    <p>GUCCI INTENSE OUD EDP</p>
+                    <a class="underline" href="./pages/all-products.html">
+                      Shop Now
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex flex-col md:flex-row justify-evenly gap-y-10 items-center">
+            <div class="feature text-center">
+              <div class="icon">
+                <img src="/imgs/icons/service-1.png" alt="FAST DELIVERY" />
+              </div>
+              <p class="text-xl font-bold mb-4 mt-4">FREE AND FAST DELIVERY</p>
+              <p>Free delivery for all orders over $140</p>
+            </div>
+            <div class="feature text-center">
+              <div class="icon">
+                <img src="/imgs/icons/service-2.png" alt="CUSTOMER SERVICE" />
+              </div>
+              <p class="text-xl font-bold mb-4 mt-4">24/7 CUSTOMER SERVICE</p>
+              <p>Friendly 24/7 customer support</p>
+            </div>
+            <div class="feature text-center">
+              <div class="icon">
+                <img
+                  src="/imgs/icons/service-3.png"
+                  alt="MONEY BACK GUARANTEE" />
+              </div>
+              <p class="text-xl font-bold mb-4 mt-4">MONEY BACK GUARANTEE</p>
+              <p>We return money within 30 days</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div
+      id="quickViewModal"
+      class="fixed top-0 left-0 right-0 px-6 md:px-12 pt-10 mt-[75px] pb-4 md:pb-0 flex bg-black/30">
+      <div
+        id="quickViewModalContent"
+        class="relative mx-auto bg-white p-4 md:p-8 rounded-md shadow-lg h-fit md:mt-[75px]"></div>
+    </div>
+    <!-- Fetch Products -->
+    <script type="module" src="/src/js/fetch-products.js"></script>
+    <!-- home script -->
+    <script type="module" src="/src/js/home.js"></script>
+    <!-- Main Script -->
+    <script type="module" src="/src/js/main.js"></script>
+  </body>
+</html>

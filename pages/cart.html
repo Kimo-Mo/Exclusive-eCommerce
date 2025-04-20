@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="/imgs/K-logo.png" type="image/x-icon" />
+    <title>Exclusive - Cart</title>
+    <meta name="description" content="Exclusive - Cart" />
+    <link rel="stylesheet" href="/src/style/style.css" />
+  </head>
+  <body>
+    <main>
+      <section class="cart pt-10 mt-[75px]">
+        <div class="container mx-auto px-6 lg:px-12">
+          <div class="section_category">
+            <p class="section_category_p">Cart</p>
+          </div>
+          <div class="mt-4 flex flex-col gap-8 justify-center">
+            <div
+              class="shadow-sm p-4 md:p-6 rounded-sm hidden md:flex justify-between gap-4">
+              <div class="flex-2 flex items-center gap-4 w-full">
+                <p>Delete</p>
+                <p>Product</p>
+              </div>
+              <div class="flex items-center justify-between flex-3">
+                <p>Price</p>
+                <p class="justify-self-end">Quantity</p>
+                <p class="justify-self-end">Subtotal</p>
+              </div>
+            </div>
+            <div class="cartItems flex flex-col gap-8 justify-center"></div>
+          </div>
+          <p class="total text-right mt-8">Total: $0</p>
+          <div class="flex md:justify-end mt-4">
+            <button
+              id="gotoCheckout"
+              class="w-full md:w-fit bg-(--primary-color) hover:bg-(--hover-btn-color) transition-[150ms] rounded text-white px-12 py-3 outline-none border-none cursor-pointer">
+              Proceed to Checkout
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/js/cart.js"></script>
+    <script type="module" src="/src/js/main.js"></script>
+  </body>
+</html>

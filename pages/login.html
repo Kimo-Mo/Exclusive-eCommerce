@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="/imgs/K-logo.png" type="image/x-icon" />
+    <title>Exclusive - Sign up</title>
+    <meta name="description" content="Exclusive - Log in" />
+    <link rel="stylesheet" href="/src/style/style.css" />
+  </head>
+
+  <body>
+    <main>
+      <section class="auth pt-10 mt-[75px]">
+        <div class="container mx-auto px-6 lg:px-12">
+          <div class="section_category">
+            <p class="section_category_p">Log In</p>
+          </div>
+          <div
+            class="flex items-center justify-between flex-col md:flex-row gap-x-10 gap-y-12 mt-4">
+            <div class="flex-1 hidden md:flex justify-start">
+              <img
+                class="authImg lg:w-[80%]"
+                src="/imgs/auth-image.webp"
+                alt="auth sign up" />
+            </div>
+            <div class="flex-1 w-full">
+              <h1 class="text-3xl mb-4 font-semibold">Log in to Exclusive</h1>
+              <p>Enter your details below</p>
+              <form
+                id="form"
+                class="flex flex-col gap-8 mt-8 *:caret-(--primary-color)">
+                <div>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="Email Address"
+                    class="w-full border-b border-[#d9d9d9] py-2 pe-4 outline-none focus:outline-none focus:border-(--primary-color)" />
+                  <p id="errEmail" class="text-red-500 capitalize"></p>
+                </div>
+                <div>
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    placeholder="Password"
+                    class="w-full border-b border-[#d9d9d9] py-2 pe-4 outline-none focus:outline-none focus:border-(--primary-color)" />
+                  <p id="errPass" class="text-red-500 capitalize"></p>
+                </div>
+                <div class="flex justify-between items-center">
+                  <button
+                    id="submitBtn"
+                    type="submit"
+                    class="text-white bg-(--primary-color) hover:bg-(--hover-btn-color) py-3 px-12 outline-none focus:outline-none cursor-pointer rounded-sm transition-[150ms]">
+                    Log In
+                  </button>
+                  <a href="#" class="text-(--primary-color) hover:underline">
+                    Forget Password?
+                  </a>
+                </div>
+              </form>
+              <p class="my-4">
+                Create an account?
+                <a
+                  href="./sign-up.html"
+                  class="auth_auth_link border-b border-black">
+                  Sign Up
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/js/login.js"></script>
+    <script type="module" src="/src/js/main.js"></script>
+  </body>
+</html>

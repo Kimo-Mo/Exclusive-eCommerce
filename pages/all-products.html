@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="/imgs/K-logo.png" type="image/x-icon" />
+    <title>Exclusive - All Products</title>
+    <meta name="description" content="Exclusive - All Products" />
+    <link rel="stylesheet" href="/src/style/style.css" />
+  </head>
+  <body>
+    <main>
+      <section class="cart pt-10 mt-[75px]">
+        <div class="container mx-auto px-6 lg:px-12">
+          <div class="section_category">
+            <p class="section_category_p">All Products</p>
+          </div>
+          <div
+            class="filter flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-8">
+            <div class="relative w-full md:w-auto">
+              <input
+                class="border border-gray-300 py-2 ps-4 pe-8 rounded-[4px] outline-none focus:outline-none focus:border-gray-500 w-full md:w-auto"
+                type="search"
+                id="search"
+                name="search"
+                placeholder="What are you looking for?" />
+              <img
+                class="absolute top-[50%] transform -translate-y-[50%] right-3"
+                src="/imgs/icons/search.png"
+                alt="search icon" />
+            </div>
+            <div
+              class="flex flex-col md:flex-row items-start md:items-center gap-2 w-full md:w-auto">
+              <label for="sort">Sort by:</label>
+              <select
+                name="sort"
+                id="sort"
+                class="border border-gray-300 py-2 ps-4 pe-8 rounded-[4px] outline-none focus:outline-none focus:border-gray-500 w-full md:w-auto">
+                <option value="relevant">Relevant</option>
+                <option value="price-asc">Low to High</option>
+                <option value="price-desc">High to Low</option>
+              </select>
+            </div>
+          </div>
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 items-center justify-between justify-items-center gap-8 mb-16"
+            id="products"></div>
+        </div>
+      </section>
+    </main>
+    <div
+      id="quickViewModal"
+      class="fixed top-0 left-0 right-0 px-6 md:px-12 pt-10 mt-[75px] pb-4 md:pb-0 flex bg-black/30">
+      <div
+        id="quickViewModalContent"
+        class="relative mx-auto bg-white p-4 md:p-8 rounded-md shadow-lg h-fit md:mt-[75px]"></div>
+    </div>
+
+    <script type="module" src="/src/js/fetch-products.js"></script>
+    <script type="module" src="/src/js/all-products.js"></script>
+    <script type="module" src="/src/js/main.js"></script>
+  </body>
+</html>

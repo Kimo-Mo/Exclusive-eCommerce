@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="/imgs/K-logo.png" type="image/x-icon" />
+    <title>Exclusive - Profile</title>
+    <meta name="description" content="Exclusive - Profile" />
+    <link rel="stylesheet" href="/src/style/style.css" />
+  </head>
+
+  <body>
+    <main>
+      <section class="profile mt-[75px] pt-10">
+        <div class="container mx-auto px-6 lg:px-12">
+          <div class="section_category">
+            <p class="section_category_p">My Account</p>
+          </div>
+          <div class="flex flex-col md:flex-row gap-x-10 gap-y-6 mt-4">
+            <div class="xl:flex-1 md:flex-2 flex flex-col gap-4 capitalize">
+              <h1 class="text-lg text-(--primary-color) cursor-pointer">
+                manage my account
+              </h1>
+              <a href="#" class="text-lg">my orders</a>
+              <a href="./wish-list.html" class="text-lg">my wishList</a>
+            </div>
+            <div class="flex-3 rounded-sm shadow-sm p-6">
+              <h1
+                id="formTitle"
+                class="text-2xl text-(--primary-color) font-bold mb-4">
+                Edit Your Profile
+              </h1>
+              <form
+                action=""
+                id="form"
+                class="flex flex-col gap-8 caret-(--primary-color)">
+                <div>
+                  <label for="name">Name</label>
+                  <input
+                    class="w-full bg-gray-100 mt-4 py-2 px-4 rounded outline-none focus:outline-none"
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder="Your Name" />
+                  <p id="errName" class="text-red-500 capitalize"></p>
+                </div>
+                <div class="flex flex-col lg:flex-row gap-6 *:flex-1">
+                  <div>
+                    <label for="email" class="mb-4">Email</label>
+                    <input
+                      class="w-full bg-gray-100 mt-4 py-2 px-4 rounded outline-none focus:outline-none"
+                      type="text"
+                      name="email"
+                      id="email"
+                      placeholder="Your Email" />
+                    <p id="errEmail" class="text-red-500 capitalize"></p>
+                  </div>
+                  <div>
+                    <label for="address" class="mb-4">Address</label>
+                    <input
+                      class="w-full bg-gray-100 mt-4 py-2 px-4 rounded outline-none focus:outline-none"
+                      type="text"
+                      name="address"
+                      id="address"
+                      placeholder="Your Address" />
+                    <p id="errAddress" class="text-red-500 capitalize"></p>
+                  </div>
+                </div>
+                <div>
+                  <label for="password" class="mb-4">Change Password</label>
+                  <input
+                    class="w-full bg-gray-100 mt-4 py-2 px-4 rounded outline-none focus:outline-none"
+                    type="password"
+                    name="password"
+                    id="password"
+                    placeholder="Current Password" />
+                  <p id="errPass" class="text-red-500 capitalize"></p>
+                  <input
+                    class="w-full bg-gray-100 mt-4 py-2 px-4 rounded outline-none focus:outline-none"
+                    type="password"
+                    name="newPassword"
+                    id="newPassword"
+                    placeholder="New Password" />
+                  <p id="errNewPass" class="text-red-500 capitalize"></p>
+                  <input
+                    class="w-full bg-gray-100 mt-4 py-2 px-4 rounded outline-none focus:outline-none"
+                    type="password"
+                    name="ConfirmNewPassword"
+                    id="ConfirmNewPassword"
+                    placeholder="Confirm New Password" />
+                  <p id="errConfirmNewPass" class="text-red-500 capitalize"></p>
+                </div>
+                <div class="flex md:justify-end">
+                  <button
+                    type="submit"
+                    id="updateBtn"
+                    class="text-white bg-(--primary-color) hover:bg-(--hover-btn-color) py-2 px-4 outline-none focus:outline-none cursor-pointer rounded-sm transition-[150ms] w-full md:w-[initial]">
+                    Save Changes
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/js/profile.js"></script>
+    <script type="module" src="/src/js/main.js"></script>
+  </body>
+</html>

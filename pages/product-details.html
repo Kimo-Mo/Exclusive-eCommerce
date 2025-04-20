@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="/imgs/K-logo.png" type="image/x-icon" />
+    <title>Exclusive - PS5-Controller</title>
+    <meta name="description" content="Exclusive - PS5-Controller" />
+    <link rel="stylesheet" href="/src/style/style.css" />
+    <style>
+      input[name="size"] + span {
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        border: 1px solid #d1d5db;
+        border-radius: 4px;
+      }
+      input[name="size"]:checked + span {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="productDetails pt-10 mt-[75px]">
+        <div class="container mx-auto px-6 lg:px-12">
+          <div class="section_category">
+            <p class="section_category_p">PS5-Controller</p>
+          </div>
+
+          <div
+            class="productDetailsContainer flex flex-col md:flex-row gap-8 items-center">
+            <div class="flex-1">
+              <img
+                src="/imgs/PS5-Controller.png"
+                alt="PS5-Controller"
+                class="w-full h-auto" />
+            </div>
+            <div class="flex-1 flex flex-col gap-4 lg:gap-6">
+              <div class="flex flex-col gap-4 lg:gap-6">
+                <h1 class="text-2xl font-bold">
+                  Sony DualSense Wireless Controller for PlayStation 5 - Black
+                  and White
+                </h1>
+                <div class="flex gap-4 items-center">
+                  <img src="/imgs/icons/Five Star.jpg" alt="Five star" />
+                  <span>(155)</span>
+                  <span>|</span>
+                  <span class="text-green-700">in Stock</span>
+                </div>
+                <p class="text-xl text-(--primary-color)">
+                  $180
+                  <span class="ml-4 line-through text-gray-700 text-[16px]">
+                    $200
+                  </span>
+                </p>
+                <p class="text-gray-700">
+                  The DualSense wireless controller for PS5 offers immersive
+                  haptic feedback, dynamic adaptive triggers and a built-in
+                  microphone, all integrated into an iconic design.
+                </p>
+              </div>
+              <div class="flex flex-col gap-4 lg:gap-6">
+                <div class="flex gap-4 items-center">
+                  <p class="font-medium">Color:</p>
+                  <div
+                    class="flex gap-4 *:size-6 *:rounded-full *:cursor-pointer">
+                    <span class="bg-black"></span>
+                    <span class="bg-white border border-gray-300"></span>
+                    <span class="bg-red-500"></span>
+                  </div>
+                </div>
+                <div class="flex gap-4 items-center">
+                  <p class="font-medium">Size:</p>
+                  <div class="flex gap-4">
+                    <label for="size1" class="cursor-pointer">
+                      <input
+                        class="hidden"
+                        type="radio"
+                        name="size"
+                        id="size1"
+                        value="Small" />
+                      <span>Small</span>
+                    </label>
+                    <label for="size2" class="cursor-pointer">
+                      <input
+                        class="hidden"
+                        type="radio"
+                        name="size"
+                        id="size2"
+                        value="Medium" />
+                      <span>Medium</span>
+                    </label>
+                    <label for="size3" class="cursor-pointer">
+                      <input
+                        class="hidden"
+                        type="radio"
+                        name="size"
+                        id="size3"
+                        value="Large"
+                        checked />
+                      <span>Large</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="flex gap-4 items-center">
+                  <p class="font-medium">Quantity:</p>
+                  <div
+                    class="flex gap-4 items-center *:px-4 *:py-2 *:border *:border-gray-300 *:rounded">
+                    <button id="minus" class="cursor-pointer">-</button>
+                    <button id="quantity">1</button>
+                    <button id="plus" class="cursor-pointer">+</button>
+                  </div>
+                </div>
+                <div class="flex gap-4">
+                  <button
+                    id="addToCart"
+                    class="py-4 px-12 inline-block h-[50px] rounded-sm transition-[150ms] bg-(--primary-color) text-white hover:bg-(--hover-btn-color) cursor-pointer flex-1">
+                    Add to cart
+                  </button>
+                  <button
+                    id="addToWishList"
+                    class="py-4 px-12 inline-block h-[50px] rounded-sm transition-[150ms] border border-gray-300 bg-white hover:bg-(--hover-btn-color) cursor-pointer">
+                    <img
+                      src="/imgs/icons/heart small.png"
+                      alt="add to wishlist" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/js/product-details.js"></script>
+    <script type="module" src="/src/js/main.js"></script>
+  </body>
+</html>

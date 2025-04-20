@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="/imgs/K-logo.png" type="image/x-icon" />
+    <title>Exclusive - Contact</title>
+    <meta name="description" content="Exclusive - Contact" />
+    <link rel="stylesheet" href="/src/style/style.css" />
+  </head>
+  <body>
+    <main>
+      <section class="contact mt-[75px] pt-10">
+        <div class="container mx-auto px-6 lg:px-12">
+          <div class="section_category">
+            <p class="section_category_p">Contact Us</p>
+          </div>
+          <div
+            class="flex flex-col md:flex-row gap-x-10 gap-y-6 mt-4 *:rounded-sm *:shadow-sm *:p-6">
+            <div class="md:flex-2 xl:flex-1 flex flex-col gap-7">
+              <div class="flex items-center gap-4">
+                <img src="/imgs/icons/Cellphone.png" alt="Cellphone" />
+                <p class="font-medium">Call Us</p>
+              </div>
+              <p>We are available 24/7, 7 days a week.</p>
+              <p>Phone: +8801611112222</p>
+              <hr />
+              <div class="flex items-center gap-4">
+                <img src="/imgs/icons/Mail.png" alt="Mail" />
+                <p class="font-medium">Write To US</p>
+              </div>
+              <p>Fill out our form and we will contact you within 24 hours.</p>
+              <p>Emails: customer@exclusive.com</p>
+              <p>Emails: support@exclusive.com</p>
+            </div>
+            <div class="flex-3">
+              <form
+                action=""
+                onsubmit="return false"
+                class="flex flex-col gap-8">
+                <div
+                  class="flex flex-col lg:flex-row gap-4 items-center justify-between *:border-none *:outline-none *:bg-gray-100 *:px-4 *:py-3 *:w-full *:rounded-sm *:caret-(--primary-color)">
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder="Your Name" />
+                  <input
+                    type="text"
+                    name="email"
+                    id="email"
+                    placeholder="Your Email" />
+                  <input
+                    type="number"
+                    name="phone"
+                    id="phone"
+                    placeholder="Your Phone" />
+                </div>
+                <textarea
+                  rows="10"
+                  name="message"
+                  id="message"
+                  placeholder="Your Message"
+                  class="border-none outline-none bg-gray-100 p-4 w-full rounded-sm h-full resize-none caret-(--primary-color)"></textarea>
+                <div class="flex justify-end">
+                  <button
+                    class="py-3 px-8 bg-(--primary-color) hover:bg-(--hover-btn-color) text-white rounded-sm w-full lg:w-fit cursor-pointer transition-[150ms]">
+                    Send Massage
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/js/main.js"></script>
+  </body>
+</html>
