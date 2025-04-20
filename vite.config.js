@@ -8,6 +8,7 @@ export default defineConfig({
         main: resolve(__dirname, "index.html"),
         cart: resolve(__dirname, "pages/cart.html"),
         login: resolve(__dirname, "pages/login.html"),
+        signup: resolve(__dirname, "pages/signup.html"),
         profile: resolve(__dirname, "pages/profile.html"),
         wishList: resolve(__dirname, "pages/wish-list.html"),
         about: resolve(__dirname, "pages/about.html"),
