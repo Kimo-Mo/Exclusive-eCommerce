@@ -1,10 +1,15 @@
 import { showToast, updateHeaderAndNav, updateHeartIcons } from "./main.js";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "./firebase";
 let AllProducts = [];
 async function fetchProducts() {
   try {
-    const response = await fetch(`/js/products.json`);
-    const data = await response.json();
-    AllProducts = data;
+    const querySnapshot = await getDocs(collection(db, "products"));
+    const products = querySnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+    AllProducts = products;
   } catch (error) {
     console.error("Error loading products:", error);
   }
